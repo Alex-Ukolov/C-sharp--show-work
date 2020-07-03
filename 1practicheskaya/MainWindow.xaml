@@ -1,0 +1,30 @@
+﻿<Window x:Class="_1practicheskaya.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="400" Width="400" Name="UI" >
+    <StackPanel DataContext="{Binding ElementName=UI}">
+        <TextBox Width="150" Margin="-110,0,130,0" Text="{Binding FilterString, UpdateSourceTrigger=PropertyChanged}" />
+        <DataGrid ItemsSource="{Binding DataGridCollection}" x:Name="rrr" AutoGenerateColumns="False"    CanUserAddRows="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="product" DataGridBoundColumn.Binding="{Binding product}" />
+                <DataGridTextColumn Header="name" DataGridBoundColumn.Binding="{Binding name}"/>
+                <DataGridTextColumn Header="cost" DataGridBoundColumn.Binding="{Binding cost}"/>
+                <DataGridTextColumn Header="uniq" DataGridBoundColumn.Binding="{Binding uniq}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <RadioButton  Margin="0,20">
+            <TextBox Name="lex" Height="23" TextWrapping="Wrap" Width="120" Margin="0,5"/>
+        </RadioButton>
+        <Label/>
+        <Label Name="WEW" Content="итог"/>
+        <TextBox Name="lexa" Text="{Binding Path=TestData.cost}" Height="19" TextWrapping="Wrap" Margin="27,0" />
+        <Button x:Name="rasschitat" Height="30" Content="рассчитать" Click="Button_Click" Margin="79,20"/>
+        <Button x:Name="rasschitat1" Height="30" Content="удалить" Click="Button_Click55" Margin="79,20"/>
+        <Button x:Name="ADD1" Height="30" Content="вставить" Margin="0,20,0,0" Click="Button_Click_1" />
+        <TextBox Name="QQQ" Height="23" TextWrapping="Wrap" Text=""  Margin="0,20,300,0"/>
+        <TextBox  Name="WWW" Height="23" TextWrapping="Wrap" Text=""  Margin="100,-25,210,0"/>
+        <TextBox Name="RRR" Height="23" TextWrapping="Wrap" Text=""  Margin="190,-25,120,0"/>
+        <TextBox Name="TTT" Height="23" TextWrapping="Wrap" Text=""  Margin="280,-25,30,0"/>
+        <Button x:Name="ADD5" Height="20" Content="вызвать" Margin="230,-1070,70,0" Click="Button_Click_5" />
+    </StackPanel>
+</Window>
